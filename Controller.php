@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace FW\Controller;
 
 use Tools\Arr;
 

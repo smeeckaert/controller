@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace FW\Controller;
 
 class Controller_Back extends Controller
 {
