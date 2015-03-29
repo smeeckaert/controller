@@ -2,9 +2,13 @@
 
 namespace Controller;
 
+use Tools\Arr;
+
 abstract class Controller
 {
-    private $_params;
+    private $_params = array();
+    private $_options = array();
+    protected $_twig;
 
     public function __construct()
     {
@@ -16,16 +20,19 @@ abstract class Controller
         $this->_params = $params;
     }
 
-    public function param($name)
+    protected function param($name)
     {
-        if (!isset($this->_params[$name])) {
-            return null;
-        }
-        return $this->_params[$name];
+        return Arr::get($this->_params, $name);
     }
 
-    public function action($actionName)
+    protected function option($name)
     {
+        return Arr::get($this->_options, $name);
+    }
+
+    public function action($actionName, $options = null)
+    {
+        $this->_options = $options;
         return $this->$actionName();
     }
 }
