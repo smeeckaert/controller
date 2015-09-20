@@ -13,5 +13,7 @@
       "FW\\Controller\\": ""
     }
   },
-  "require": {}
+  "require": {
+    "smeeckaert/fw-tools": "~1.0"
+  }
 }
